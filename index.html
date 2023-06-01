@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<title>Мария Зубарева</title>
+<body>
+
+<input id="num_1" type="text" name="num_1" style="width: 100px; height: 17px;">
+<input id="num_2" type="text" name="num_2" style="width: 100px; height: 17px;">
+<select id="operation" name="operation">
+    <option value="1">+</option>
+    <option value="2">-</option>
+    <option value="3">*</option>
+    <option value="4">/</option>
+    <option value="">;</option>
+  </select>
+<input id="btn_sum" type="button" value="Submit">
+<div id="str"></div>
+
+
+
+<script>
+btn_sum.onclick = function() {
+    let val1 = document.getElementById('num_1').value;
+    let val2 = document.getElementById('num_2').value;
+    let operation = document.getElementById('operation').value;
+    
+    let result = "";
+    if  (operation === "1") {
+      result = Number(val1) + Number(val2);
+    } else if  (operation === "2") {
+      result = Number(val1) - Number(val2);
+    } else if  (operation === "3") {
+       result = Number(val1) * Number(val2);
+    } else if  (operation === "4") {
+       result = Number(val1) / Number(val2);
+    } else {
+       result = "не найдена операция";
+    }
+
+    document.getElementById('str').innerHTML = "Вы ввели: " + val1 + " - " + val2 + " " + operation + " - " + result;
+};
+</script>
+ 
+
+  <p>
+     <input id="num_3" type="text" name="num_3" style="width: 101px; height: 17px;" value="0">
+  </p>
+  
+  <p>
+    <input id="btn_0" type="button" value="0">
+    <input id="btn_c" type="button" value="C">
+    <input id="btn_minus" type="button" value="-">
+    <input id="btn_plus" type="button" value="+">
+  </p>
+
+  <p>
+    <input id="btn_sum" type="button" value="1">
+    <input id="btn_sum" type="button" value="2">
+    <input id="btn_sum" type="button" value="3">
+    <input id="btn_sum" type="button" value="/">
+  </p>
+
+  <p>
+    <input id="btn_sum" type="button" value="4">
+    <input id="btn_sum" type="button" value="5">
+    <input id="btn_sum" type="button" value="6">
+    <input id="btn_sum" type="button" value="*">
+  </p>
+
+    <input id="btn_sum" type="button" value="7">
+    <input id="btn_sum" type="button" value="8">
+    <input id="btn_sum" type="button" value="9">
+    <input id="btn_sum" type="button" value="=">
+
+
+    <script>
+      btn_0.onclick = function() {
+        let val = document.getElementById('num_3').value; 
+        let result = val + "0";
+        document.getElementById('num_3').value = result;
+      };
+
+      btn_c.onclick = function() { 
+        document.getElementById('num_3').value = "0";
+      };
+  </script>
+</body>
+</html>
+
+
+  
+
+  
+<!-- - как подключить файл js
+     - изменить длину input
+     - создать реальный калькулятор -->
